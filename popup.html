@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="popup.css">
+    <script src="jquery-3.6.0.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- get input work time, break time and ok btn -->
+    <form class="container">
+        <h1> Set timer </h1>
+        <input id="work-time" type="number" placeholder="work time (in minutes)">
+        <input id="break-time" type="number" placeholder="break time (in minutes)">
+        <button id="ok-btn">OK</button>
+    </form>
+
+    <div id="hidden-container">
+        <h1>Hidden container!!</h1>
+        <div class="timers">
+            <div class="workLeft">
+
+            </div>
+            <div class="breakLeft">
+
+            </div>
+        </div>
+        <div class="time-left-val">
+            <h2 class="work-left-val">
+                T1
+            </h2>
+            <h2 class="break-left-val">
+                T2
+            </h2>
+        </div>
+        <button id="reset-btn">Reset</button>
+    </div>
+    <!-- <div id="thediv">
+        hola
+        <input type="button" value="click to show"/>
+    </div> -->
+    <!-- <div><h1 id="msg1">Hello</h1></div> -->
+    <script src="./popup.js"></script>
+</body>
+
+</html>
