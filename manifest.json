@@ -1,15 +1,15 @@
 {
+    "manifest_version": 2,
     "name": "Timer app",
-    "description": "Making a timer",
     "version": "1.0",
-    "manifest_version": 3,
+    "description": "Making a timer",
+    "browser_action": {
+        "default_popup": "popup.html"
+    },
     "background": {
-        "service_worker": "background.js"
+        "scripts": ["background.js"]
     },
     "permissions": [
         "storage"
-    ],
-    "action": {
-        "default_popup": "popup.html"
-    }
+    ]
 }

@@ -1,5 +1,4 @@
 $(function () {
-    var wtl = -1, btl = -1;
     const frm = $('.container');
     const bt1 = $('#ok-btn');
     var workTime = $('#work-time')[0];
@@ -8,11 +7,10 @@ $(function () {
     var resetBtn = $('#reset-btn');
     var workBar = $('.workLeft');
     var breakBar = $('.breakLeft');
-    var workLeftVal = $('.work-left-val');
-    var breakLeftVal = $('.break-left-val');
+    var workLeftVal = $('.show-work-left');
+    var breakLeftVal = $('.show-break-left');
 
     hiddenContainer.hide();     //  hidden window
-    //  give functionality
     //  form side
     frm.click((e) => {
         e.preventDefault();
@@ -23,40 +21,59 @@ $(function () {
             console.log("both set");
             frm.hide();
             hiddenContainer.show();
-            wtl = workTime.value, btl = breakTime.value;
-            console.log(wtl," is work time and ",btl," is break time left");
+            localStorage.setItem('workTime', wt);
+            localStorage.setItem('breakTime', bt);
+            localStorage.setItem('state', 0);
+            // state: {0(work) ; 1(break) ; 2(paused)}
         } else {
             console.log("please fill both values");
         }
     });
     // timer side
-    resetBtn.click(()=>{
+    var popupTicker = setInterval(updateTimings,1000);
+
+    function updateTimings(){
+        var workTime = localStorage.getItem('workTime');
+        var breakTime = localStorage.getItem('breakTime');
+        workLeftVal[0].innerText=(workTime+" minutes");
+        breakLeftVal[0].innerText=(breakTime+" minutes");
+    }
+
+    resetBtn.click(() => {
+        localStorage.clear();
         hiddenContainer.hide();
         frm.show();
     });
-    workLeftVal.click(()=>{
-        startWork();
-    })
-    // sending msg to background.js to tick every second
-    function startWork(){
-        // console.log("starting work");
-        chrome.runtime.sendMessage(["start-working",wtl], (response) => {
-            console.log(response," is reponse");
-        });
+    // workLeftVal.click(() => {
+    //     startWork();
+    // })
+
+    // get the value of current work and break time and update popup.html accordingly
+    // get this value every second
+    // so clear interval should run at popup end
+    // however, since background.js is running everytime, so set interval should run
+    // at background.js end
+    // so, the setInterval should run at both the ends
+    var updateShow = setInterval(updateShow, 1000);
+
+    function updateShow() {
+
     }
-    function stoptWork(){
-        // chrome.runtime.sendMessage("stop-working", (response) => {
-        
-        // });
+
+    function startWork() {
+
     }
-    function pause(){
+    function stoptWork() {
+
+    }
+    function pause() {
         // chrome.runtime.sendMessage("pause", (response) => {
-        
+
         // });
     }
-    function reset(){
+    function reset() {
         // chrome.runtime.sendMessage("reset", (response) => {
-        
+
         // });
-    }    
+    }
 });
