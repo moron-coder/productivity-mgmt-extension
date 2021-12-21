@@ -1,4 +1,11 @@
 $(function () {
+    $('#home').click(function () {
+        console.log("clicked")
+        chrome.tabs.create({
+            url: 'customPage/myPage.html'
+        });
+    });
+
     const frm = $('.container');
     const bt1 = $('#ok-btn');
     var workTime = $('#work-time')[0];

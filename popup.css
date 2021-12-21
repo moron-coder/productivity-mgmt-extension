@@ -25,7 +25,7 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-button {
+#reset-btn,#pause-btn,#ok-btn {
     border: none;
     border-radius: 50%;
     height: 2rem;
@@ -82,3 +82,27 @@ button {
     width: 15rem;
     justify-content: space-around;
 }
+
+.btn-container{
+    display: flex;
+    flex-direction: row;
+    margin: 3rem 18rem 0 0;
+}
+
+#home {
+    /* margin: 1rem 0 0 1rem; */
+    background: none;
+    border: none;
+    transition: all 0.5s ease-in-out 0s;
+    transform: scale(4) translate(4rem,0);
+    color: dimgray;
+}
+button#home:hover {
+    color: black;
+}
+
+/* i.fas.fa-home {
+    position: fixed;
+    top: 0;
+    left: 3rem;
+}  */
