@@ -83,10 +83,11 @@ input::-webkit-inner-spin-button {
     justify-content: space-around;
 }
 
-.btn-container{
+.btn-container {
     display: flex;
     flex-direction: row;
-    margin: 3rem 18rem 0 0;
+    margin: 2rem 0 0 -14rem;
+    position: fixed;
 }
 
 #home {

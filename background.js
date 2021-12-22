@@ -63,7 +63,7 @@ setInterval(() => {
         // console.log(cmp1);
         // console.log(cmp2);
         if (cmp1 == cmp2) {
-          console.log("Showing notification!!");
+          // console.log("Showing notification!!");
           var notifOptions = {
             type: 'basic',
             iconUrl: '../img48.png',

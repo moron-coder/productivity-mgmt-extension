@@ -25,13 +25,13 @@ $(function () {
 $(function () {
 
   $('h1').click(function () {
-    console.log("I am clicked!!!");
+    // console.log("I am clicked!!!");
   });
 
   $('.userForms2').hide();
 
   $('#toggleForm2').click(function () {
-    console.log("I am also clicked!!!");
+    // console.log("I am also clicked!!!");
 
     $('.userForms2').slideToggle("slow", function () {
 
@@ -109,7 +109,7 @@ function saveLocalTodos(todo) {
         tmp.innerHTML = '<h2>Tasks</h2>';
       });
       $('.form-heading').fadeToggle("fast", function () { });;
-      console.log("Sorry!! this task has been inserted before!!!");
+      // console.log("Sorry!! this task has been inserted before!!!");
       return false;
     }
   }
@@ -141,12 +141,8 @@ function modifyTask(todo) {
   } else {
     todos = JSON.parse(localStorage.getItem("todos"));
   }
-  console.log(todo);
-  console.log(todo.innerText);
   for (let task of todos) {
-    console.log(task);
-    if (task.taskName === todo.innerText) {
-      console.log("Yayyy!!!");
+    if (task.taskName.trim() === todo.innerText) {
       task.taskDone = 1 - task.taskDone;
     }
   }
@@ -167,7 +163,7 @@ function removeLocalTodos(todo) {
   // return;
   let newTodos = [];
   for (let aTask of todos) {
-    if (aTask.taskName != todo.children[0].innerText) {
+    if (aTask.taskName.trim() != todo.children[0].innerText) {
       newTodos.push(aTask);
     }
   }
@@ -266,9 +262,9 @@ window.addEventListener("DOMContentLoaded", () => {
 var ac = {
   // (A) INITIALIZE ALARM CLOCK
   init: function () {
-    console.log(localStorage.getItem("setHr"));
-    console.log(localStorage.getItem("setMin"));
-    console.log(localStorage.getItem("setSec"));
+    // console.log(localStorage.getItem("setHr"));
+    // console.log(localStorage.getItem("setMin"));
+    // console.log(localStorage.getItem("setSec"));
     // (A1) GET THE CURRENT TIME - HOUR, MIN, SECONDS
     ac.chr = document.getElementById("chr");
     ac.cmin = document.getElementById("cmin");
@@ -350,7 +346,7 @@ var ac = {
   // (E) SET ALARM
   set: function () {
     //  set values
-    console.log("Values are being set");
+    // console.log("Values are being set");
     // localStorage.setItem("setHr",  ac.thr.value);
     // localStorage.setItem("setMin", ac.thm.value);
     // localStorage.setItem("setSec",  ac.ths.value);
@@ -369,7 +365,7 @@ var ac = {
   // (F) RESET ALARM
   reset: function () {
     //  reset time
-    console.log("Values are being set");
+    // console.log("Values are being set");
     // localStorage.setItem("setHr", -1);
     // localStorage.setItem("setMin", -1);
     // localStorage.setItem("setSec", -1);
