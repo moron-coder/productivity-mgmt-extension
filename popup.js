@@ -30,8 +30,8 @@ $(function () {
         e.preventDefault();
     });
     bt1.click(() => {
-        var wt = workTime.value, bt = breakTime.value;
-        initialWorkTime = workTime.value, initialBreakTime = breakTime.value;
+        var wt = workTime.value*60, bt = breakTime.value*60;
+        initialWorkTime = workTime.value*60, initialBreakTime = breakTime.value*60;
         if (wt && bt) {
             console.log("both set");
             frm.hide();
@@ -63,6 +63,13 @@ $(function () {
             pauseBtn[0].innerText="Resume";
         }else if(pausedState<2){
             pauseBtn[0].innerText="Pause";
+        }
+        if(pausedState%2){
+            workLeftVal[0].style.opacity="0.5";
+            breakLeftVal[0].style.opacity="1";
+        }else{
+            workLeftVal[0].style.opacity="1";
+            breakLeftVal[0].style.opacity="0.5";
         }
     }
 
