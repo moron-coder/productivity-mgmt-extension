@@ -7,7 +7,9 @@
         "default_popup": "popup.html"
     },
     "background": {
-        "scripts": ["background.js"],
+        "scripts": [
+            "background.js"
+        ],
         "persistent": false
     },
     "permissions": [
@@ -16,5 +18,10 @@
         "contextMenus",
         "tabs",
         "alarms"
-    ]
+    ],
+    "icons": {
+        "16": "img16.png",
+        "48": "img48.png",
+        "128": "img128.png"
+    }
 }
