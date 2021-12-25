@@ -70,7 +70,7 @@ input::-webkit-inner-spin-button {
     align-items: center;
     padding: 2rem;
     /* background: url(bg_timer.png); */
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1)), url("./hdn_bg.jpeg");
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1)), url("./bg_timer.png");
   width: 200px;
     background-repeat: no-repeat;
     background-size: cover;
