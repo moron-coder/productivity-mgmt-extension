@@ -1,6 +1,7 @@
 body {
     /* background-image: url(bgImg.jpg); */
-    background-image: linear-gradient(90deg,rgba( 0,0,10,0.5), rgba(0,0, 0, 0.1)), url('bgPic.jpg');
+    /* background-image: linear-gradient(90deg,rgba( 0,0,10,0.5), rgba(0,0, 0, 0.1)), url('bgPic.jpg'); */
+    background: linear-gradient(135deg, steelblue, transparent);
     background-size: cover;
     background-repeat: no-repeat;
     color: ghostwhite;
@@ -99,7 +100,7 @@ h2 {
 
 form#task-form {
     width: 35rem;
-    background: rgba(0,0,0,0.2);
+    background: linear-gradient(45deg, steelblue, transparent);
     border: none;
     border-radius: 3rem;
     padding: 0rem 4rem 4rem 4rem;
@@ -118,7 +119,7 @@ form#task-form {
 #textarea {
     width: 25rem;
     height: 20rem;
-    background: rgba(0,0,0,0.3);
+    background: linear-gradient(45deg, steelblue, transparent);
     border: none;
     border-radius: 3rem;
     font-size: 2rem;
@@ -147,7 +148,7 @@ form button {
 }
 form button {
   color: white;
-  background: rgba(0,0,0,0.3);
+  background: steelblue;
   cursor: pointer;
   transition: all 0s ease;
 }
@@ -167,7 +168,7 @@ form button:hover {
   font-family: monospace;
   font-weight: bolder;
   color: white;
-  background: rgba(0,0,0,0.3);
+  background: steelblue;
   cursor: pointer;
   transition: all 0s ease;
   display: flex;
@@ -216,7 +217,7 @@ ul.todo-item {
 .todo-list {
     width: 40rem;
     display: flex;
-    background: linear-gradient(45deg, rgba(0,0,0,0.6), transparent);
+    background: linear-gradient(45deg, steelblue, transparent);
     border-radius: 3rem;
     flex-direction: column;
     margin-top: 2rem;

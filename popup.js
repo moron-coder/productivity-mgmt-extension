@@ -65,11 +65,11 @@ $(function () {
             pauseBtn[0].innerText="Pause";
         }
         if(pausedState%2){
-            workLeftVal[0].style.opacity="0.5";
+            workLeftVal[0].style.opacity="0.3";
             breakLeftVal[0].style.opacity="1";
         }else{
             workLeftVal[0].style.opacity="1";
-            breakLeftVal[0].style.opacity="0.5";
+            breakLeftVal[0].style.opacity="0.3";
         }
     }
 

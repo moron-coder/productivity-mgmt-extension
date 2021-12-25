@@ -19,7 +19,7 @@
 #taskForm2{
   width: 25rem;
   height: 30rem;
-  background: rgba(0,0,0,0.3);
+  background: linear-gradient(45deg, steelblue, transparent);
   border: none;
   border-radius: 3rem;
   text-align: center;
@@ -103,7 +103,7 @@
   text-align: center;
   font-weight: bolder;
   color: white;
-  background: rgba(0,0,0,0.3);
+  background: steelblue;
   cursor: pointer;
   transition: all 0s ease;
 }
@@ -118,7 +118,7 @@
 
 #textblock {
   width: 30rem;
-  background: rgba(0,0,0,0.2);
+  background: linear-gradient(45deg, steelblue, transparent);
   border: none;
   border-radius: 3rem;
   padding: 1rem 1rem 0rem 1rem;

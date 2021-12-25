@@ -3,7 +3,7 @@ body {
 }
 
 ::selection {
-    color: cornflowerblue;
+    color: bisque;
     background: transparent;
 }
 
@@ -76,7 +76,7 @@ input::-webkit-inner-spin-button {
     align-items: center;
     padding: 2rem;
     /* background: url(bg_timer.png); */
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.1)), url("./bg_timer.png");
+    background: linear-gradient(45deg, lightblue, transparent);
     width: 200px;
     background-repeat: no-repeat;
     background-size: cover;
@@ -88,7 +88,8 @@ input::-webkit-inner-spin-button {
 
 #hidden-container {
     /* background-image: url("./hdn_bg.jpeg"); */
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)), url("./hdn_bg.jpeg");
+    /* background: linear-gradient(90deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0)), url("./hdn_bg.jpeg"); */
+    background: linear-gradient(45deg, lightblue, transparent);
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -107,7 +108,8 @@ input::-webkit-inner-spin-button {
 } */
 
 .timers {
-    background-image: url(time_bg.webp);
+    /* background-image: url(time_bg.webp); */
+    background: linear-gradient(-135deg, lightblue, transparent);
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -165,7 +167,7 @@ button#home:hover {
 
 .show-work-left, .show-break-left {
     transition: all 0.5s ease-in-out 0s;
-    background: darkgray;
+    background: darkturquoise;
     display: flex;
     flex-wrap: wrap;
     padding: 1rem;
