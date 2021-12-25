@@ -274,7 +274,7 @@ ul.todo-item {
 }
 
 .task-done{
-    color: red;
+    color: lawngreen;
 }
 
 i.fas.fa-trash {
