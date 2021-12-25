@@ -191,7 +191,7 @@ form button:hover {
 /*block*/
 
 ::selection {
-    color: deepskyblue;
+    color: aqua;
     background: none;
 }
 
