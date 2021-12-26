@@ -1,33 +1,61 @@
-const ticker = setInterval(updateTimings,1000);
+const ticker = setInterval(updateTimings, 1000);
 
-function updateTimings(){
-    var workTime = localStorage.getItem('workTime');
-    var breakTime = localStorage.getItem('breakTime');
-    var state=localStorage.getItem('state');
-    if(state!=null && state == 0){
-        // work
-        if(workTime>0){
-            localStorage.setItem('workTime', workTime-1);
-            workTime=localStorage.getItem('workTime');
-        }else if(breakTime>0){
-            localStorage.setItem('breakTime', breakTime-1);
-            localStorage.setItem('state', 1);
-        }else{
-            localStorage.setItem('state', 2); 
-        }
-    }else if(state!=null && state == 1){
-        // break
-        if(breakTime>0){
-            localStorage.setItem('breakTime', breakTime-1);
-        }else if(workTime>0){
-            localStorage.setItem('workTime', workTime-1);
-            localStorage.setItem('state', 0);
-        }else{
-            localStorage.setItem('state', 2); 
-        }
-    }else if(state!=null){
-        // paused
-    }    
+function updateTimings() {
+  var workTime = localStorage.getItem('workTime');
+  var breakTime = localStorage.getItem('breakTime');
+  var state = localStorage.getItem('state');
+  if (state != null && state == 0) {
+    // work
+    if (workTime > 0) {
+      localStorage.setItem('workTime', workTime - 1);
+      workTime = localStorage.getItem('workTime');
+    } else if (breakTime > 0) {
+      var notifOptions = {
+        type: 'basic',
+        iconUrl: '../img48.png',
+        title: "Time over!!!",
+        message: "Work time finished"
+      };
+      chrome.notifications.create('timerNotif', notifOptions);
+      localStorage.setItem('breakTime', breakTime - 1);
+      localStorage.setItem('state', 1);
+    } else {
+      localStorage.setItem('state', 2);
+      var notifOptions = {
+        type: 'basic',
+        iconUrl: '../img48.png',
+        title: "Time over!!!",
+        message: "Both work and break time finished"
+      };
+      chrome.notifications.create('timerNotif', notifOptions);
+    }
+  } else if (state != null && state == 1) {
+    // break
+    if (breakTime > 0) {
+      localStorage.setItem('breakTime', breakTime - 1);
+    } else if (workTime > 0) {
+      var notifOptions = {
+        type: 'basic',
+        iconUrl: '../img48.png',
+        title: "Time over!!!",
+        message: "Break time finished"
+      };
+      chrome.notifications.create('timerNotif', notifOptions);
+      localStorage.setItem('workTime', workTime - 1);
+      localStorage.setItem('state', 0);
+    } else {
+      localStorage.setItem('state', 2);
+      var notifOptions = {
+        type: 'basic',
+        iconUrl: '../img48.png',
+        title: "Time over!!!",
+        message: "Both work and break time finished"
+      };
+      chrome.notifications.create('timerNotif', notifOptions);
+    }
+  } else if (state != null) {
+    // paused
+  }
 }
 
 /////////////// previous version ////////////////
@@ -67,8 +95,8 @@ setInterval(() => {
           var notifOptions = {
             type: 'basic',
             iconUrl: '../img48.png',
-            title: "limit reached",
-            message: "Timer reached!!"
+            title: "Alarm!!",
+            message: "Reminder!!"
           };
           chrome.notifications.create('timerNotif', notifOptions);
           chrome.storage.sync.set({ setHr: -1 });
