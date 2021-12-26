@@ -3,7 +3,7 @@ As a team of 3 developers, we built this chrome extension to help user to track 
 
 # Tech Stack
 #### Front-end : `HTML, CSS, jQuery and Javascript`
-#### Database : [chrome.storage](https://developer.chrome.com/docs/extensions/reference/storage/) 
+#### Database : [chrome.storage](https://developer.chrome.com/docs/extensions/reference/storage/)  and [window.localStorage](https://developer.mozilla.org/en-US/docs/Web/API/Window/localStorage)
 
 # Guidelines to Setup
 
