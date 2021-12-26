@@ -60,10 +60,10 @@ function addTodo(e) {
   todoDiv.classList.add("a-task");
   //Create list
   const newTodo = document.createElement("li");
-  newTodo.innerText = todoInput.value;
+  newTodo.innerText = todoInput.value.trim();
   //Save to local - do this last
   //Save to local
-  if (!saveLocalTodos(todoInput.value)) return;
+  if (!saveLocalTodos(todoInput.value.trim())) return;
   //
   newTodo.classList.add("todo-item");
   todoDiv.appendChild(newTodo);
